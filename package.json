@@ -1,0 +1,25 @@
+{
+  "name": "eslintautoonsave",
+  "version": "1.0.0",
+  "description": "watches selected files in your repo for new saves and runs ESLint in its own terminal when it sees a save.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdemelle-SiP/ESLintAutoOnSave.git"
+  },
+  "keywords": [
+    "ESLint",
+    "automated",
+    "watcher",
+    "save"
+  ],
+  "author": "Todd DeMelle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tdemelle-SiP/ESLintAutoOnSave/issues"
+  },
+  "homepage": "https://github.com/tdemelle-SiP/ESLintAutoOnSave#readme"
+}
