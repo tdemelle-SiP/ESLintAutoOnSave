@@ -4,7 +4,8 @@
   "description": "watches selected files in your repo for new saves and runs ESLint in its own terminal when it sees a save.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node postinstall.js"
   },
   "repository": {
     "type": "git",
