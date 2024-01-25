@@ -1,4 +1,4 @@
-//scripts/eslintWatcher.js
+//scripts/eslint-watcher.js
 
 const chokidar = require('chokidar');
 const { exec } = require('child_process');

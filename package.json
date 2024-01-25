@@ -1,6 +1,6 @@
 {
-  "name": "eslintWatcher",
-  "version": "1.0.0",
+  "name": "eslint-watcher",
+  "version": "1.1.0",
   "description": "watches selected files in your repo for new saves and runs ESLint in its own terminal when it sees a save.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tdemelle-SiP/eslintWatcher.git"
+    "url": "git+https://github.com/tdemelle-SiP/eslint-watcher.git"
   },
   "keywords": [
     "ESLint",
@@ -19,7 +19,7 @@
   "author": "Todd DeMelle",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tdemelle-SiP/eslintWatcher/issues"
+    "url": "https://github.com/tdemelle-SiP/eslint-watcher/issues"
   },
-  "homepage": "https://github.com/tdemelle-SiP/eslintWatcher#readme"
+  "homepage": "https://github.com/tdemelle-SiP/eslint-watcher#readme"
 }
