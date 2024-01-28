@@ -78,5 +78,3 @@ watcher
     logWithTimestamp(`File ${path} has been removed`);
     runESLint();
   });
-
-// Do not start the animation initially

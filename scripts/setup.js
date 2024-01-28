@@ -1,4 +1,4 @@
-// setup.js
+#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -122,6 +122,10 @@ function setup() {
   createOrUpdateESLintConfig();
   createVSCodeTasks();
   console.log('Setup complete. Please restart your IDE.');
+  console.log('Next steps:');
+  console.log('1. Restart your Visual Studio Code.');
+  console.log('2. Open the Command Palette (Ctrl+Shift+P) and run "Tasks: Run Task".');
+  console.log('3. Select "Start ESLint Watcher" to begin linting.');
 }
 
 setup();

@@ -4,7 +4,7 @@
   "description": "Watches selected files in your repo for new saves and runs ESLint in its own terminal when it sees a save.",
   "main": "scripts/eslint-watcher.js",
   "bin": {
-    "eslint-watcher-setup": "./scripts/setup.js"
+    "eslint-watcher-setup": "node ./scripts/setup.js"
   },
   "scripts": {
     "setup": "node scripts/setup.js",
