@@ -1,55 +1,50 @@
-
 # eslint-watcher
 
-`eslint-watcher` is an advanced Node.js tool designed to enhance your JavaScript coding experience in Visual Studio Code. This utility automatically applies ESLint to your JavaScript files as you edit them, ensuring your code adheres to the best practices and style guidelines.
+`eslint-watcher` is a Node.js utility designed to enhance your JavaScript and TypeScript development workflow in Visual Studio Code. It automatically monitors your files and applies ESLint in real-time, ensuring code quality and consistency.
 
 ## Features
 
-- **Real-time Linting**: Actively monitors and lints your JavaScript files, providing immediate feedback on ESLint rule violations.
-- **Integrated with Visual Studio Code**: Specifically optimized for VSCode, `eslint-watcher` integrates smoothly into your development workflow.
-- **Automated Task Setup**: Comes with a post-install script that automatically sets up a VSCode task, enabling `eslint-watcher` to start as soon as you open your project folder.
-- **Customizable File Monitoring**: Tailor `eslint-watcher` to your project's needs by specifying which files or directories to watch.
-- **Respects Gitignore Settings**: Automatically ignores files specified in your `.gitignore`, focusing only on the files you are actively developing.
-- **Easy Installation**: Designed for hassle-free setup, making it accessible for developers of all skill levels.
+- **Automatic Linting**: Monitors JavaScript and TypeScript files in real-time for ESLint rule violations.
+- **VS Code Integration**: Seamlessly integrates with Visual Studio Code, enhancing your coding experience without disrupting your workflow.
+- **Easy Setup**: A simple setup script configures `eslint-watcher` in your project with minimal effort.
+- **Customizable Monitoring**: Configure which files or directories to monitor according to your project's needs.
+- **Respects Gitignore**: Automatically excludes files listed in your `.gitignore`, focusing linting on relevant files.
+- **Supports JavaScript and TypeScript**: Works with both JavaScript and TypeScript projects, ensuring broad compatibility.
 
 ## Installation
 
-Install `eslint-watcher` with npm:
+1. Install `eslint-watcher` via npm:
 
-```sh
-npm install eslint-watcher
-```
+    ```sh
+    npm install eslint-watcher
+    ```
 
-Post-installation, `eslint-watcher` sets up a Visual Studio Code task to run automatically. This makes your linting process seamless and integrated.
+2. Run the setup script to configure `eslint-watcher` in your project:
+
+    ```sh
+    npm run setup
+    ```
+
+This script will install ESLint (if not already installed), set up a default ESLint configuration, and create necessary Visual Studio Code tasks.
 
 ## Usage
 
-Once installed, simply open your project in Visual Studio Code. The watcher will start in the background, monitoring your JavaScript files according to the specified configuration.
+After installation and setup, `eslint-watcher` will automatically start whenever you open your project in Visual Studio Code. It will monitor specified files and directories, applying ESLint checks in real-time.
 
-## Configuration
+## Custom Configuration
 
-Customize `eslint-watcher` by modifying the `eslintWatcherConfig.json` file in your project's root directory. Define the paths and file types you want the watcher to monitor.
-
-Example configuration:
-
-```json
-{
-  "watchPaths": ["src/**/*.js", "tests/**/*.js"]
-}
-```
-
-This configuration ensures `eslint-watcher` monitors all JavaScript files in your `src` and `tests` directories.
+You can customize the ESLint rules by editing the `.eslintrc.js` file in your project root. Modify this file to tailor the linting rules to your project's specific needs.
 
 ## Contributing
 
-Your contributions can help make `eslint-watcher` even better. If you have suggestions or improvements, feel free to fork the repository, make your changes, and submit a pull request. We appreciate your input!
+Contributions to `eslint-watcher` are welcome! If you have suggestions or improvements, feel free to fork the repository, make your changes, and submit a pull request. Your input helps make `eslint-watcher` better for everyone.
 
 ## License
 
-`eslint-watcher` is open-source software licensed under the MIT License. For more information, please refer to the [LICENSE](LICENSE) file.
+`eslint-watcher` is open-source software licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## Contact
+## Questions and Feedback
 
-If you have any questions or feedback about `eslint-watcher`, don't hesitate to reach out via our GitHub repository.
+For questions, feedback, or issues, please visit the [GitHub repository](https://github.com/tdemelle-SiP/eslint-watcher).
 
 Happy coding with `eslint-watcher`!

@@ -1,26 +1,30 @@
 {
   "name": "eslint-watcher",
-  "version": "1.1.0",
-  "description": "watches selected files in your repo for new saves and runs ESLint in its own terminal when it sees a save.",
-  "main": "index.js",
+  "version": "1.2.0",
+  "description": "Watches selected files in your repo for new saves and runs ESLint in its own terminal when it sees a save.",
+  "main": "scripts/eslint-watcher.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "node postinstall.js"
+    "setup": "node scripts/setup.js",
+    "eslint-watcher": "node scripts/eslint-watcher.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tdemelle-SiP/eslint-watcher.git"
   },
-  "keywords": [
-    "ESLint",
-    "automated",
-    "watcher",
-    "save"
-  ],
+  "keywords": ["ESLint", "automated", "watcher", "save"],
   "author": "Todd DeMelle",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tdemelle-SiP/eslint-watcher/issues"
   },
-  "homepage": "https://github.com/tdemelle-SiP/eslint-watcher#readme"
+  "homepage": "https://github.com/tdemelle-SiP/eslint-watcher#readme",
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.29.4",
+    "@typescript-eslint/parser": "^5.22.0",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-react-app": "^7.0.1"
+  }
 }

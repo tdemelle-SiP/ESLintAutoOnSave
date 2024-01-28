@@ -5,7 +5,7 @@ const { exec } = require('child_process');
 const path = require('path');
 
 // Define paths to watch
-const watchPaths = ['src/*.js', '*.css', '*.html'];
+const watchPaths = ['src/*.js', 'src/*.css', 'src/*.html', 'scripts/*.js', 'scripts/*css', 'scripts/*html', '*.css', '*.html', '*.js'];
 
 // Initialize watcher
 const watcher = chokidar.watch(watchPaths, { ignored: /(^|[\/\\])\../, persistent: true });
@@ -13,6 +13,7 @@ const watcher = chokidar.watch(watchPaths, { ignored: /(^|[\/\\])\../, persisten
 let isESLintRunning = false;
 let animationFrame = 0;
 let animationInterval;
+
 const animationFrames = ['-\\|/-\\|/-\\|/', '\\|/-\\|/-\\|/-', '|/-\\|/-\\|/-\\', '/-\\|/-\\|/-\\|'];
 
 function getTimestamp() {
@@ -48,11 +49,14 @@ function runESLint() {
   exec('npx eslint .', (err, stdout, stderr) => {
     logWithTimestamp('ESLint check completed.');
 
-    if (err || stdout) {
-      console.log(`[${getTimestamp()}] ESLint errors detected:\n`);
-      console.log(`stdout: ${stdout}`);
+    if (stdout) {
+      console.log(`[${getTimestamp()}] ESLint errors/warnings detected:\n`);
+      console.log(stdout);
+    } else if (err) {
+      console.log(`[${getTimestamp()}] Error running ESLint:\n`);
+      console.log(stderr);
     } else {
-      logWithTimestamp('No ESLint errors detected.');
+      logWithTimestamp('No ESLint errors or warnings detected.');
     }
 
     isESLintRunning = false;
