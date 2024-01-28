@@ -4,7 +4,7 @@
   "description": "Watches selected files in your repo for new saves and runs ESLint in its own terminal when it sees a save.",
   "main": "scripts/eslint-watcher.js",
   "scripts": {
-    "postinstall": "node ./scripts/setup.js",
+    "postinstall": "node scripts/setup.js || echo 'Automated setup failed. Please run `npm run setup` manually in your project directory to complete the setup. This command will install ESLint if not already installed, create or update .eslintrc.js with default ESLint configurations, and set up a Visual Studio Code task for ESLint Watcher.'",
     "setup": "node scripts/setup.js",
     "eslint-watcher": "node scripts/eslint-watcher.js"
   },
