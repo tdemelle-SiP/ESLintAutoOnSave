@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+console.log('Setup script has started.');
 
 const fs = require('fs');
 const path = require('path');
@@ -129,3 +132,5 @@ function setup() {
 }
 
 setup();
+
+console.log('Setup script has finished.');
