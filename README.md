@@ -5,11 +5,13 @@
 ## Features
 
 - **Automatic Linting**: Monitors JavaScript and TypeScript files in real-time for ESLint rule violations.
+- **Comprehensive Coverage**: Provides linting coverage for a wide range of code, including but not limited to:
+  - Vanilla JavaScript and TypeScript
+  - React applications
 - **VS Code Integration**: Seamlessly integrates with Visual Studio Code, enhancing your coding experience without disrupting your workflow.
 - **Easy Setup**: A simple setup script configures `eslint-watcher` in your project with minimal effort.
 - **Customizable Monitoring**: Configure which files or directories to monitor according to your project's needs.
-- **Respects Gitignore**: Automatically excludes files listed in your `.gitignore`, focusing linting on relevant files.
-- **Supports JavaScript and TypeScript**: Works with both JavaScript and TypeScript projects, ensuring broad compatibility.
+- **Customizable Rules**: Tailor the linting rules to your project's specific needs by editing the `.eslintrc.js` file in your project root.
 
 ## Installation
 
@@ -30,6 +32,17 @@ This script will install ESLint (if not already installed), set up a default ESL
 ## Usage
 
 After installation and setup, `eslint-watcher` will automatically start whenever you open your project in Visual Studio Code. It will monitor specified files and directories, applying ESLint checks in real-time.
+
+## Dependencies and Coverage
+
+`eslint-watcher` uses several dependencies to provide comprehensive linting coverage:
+
+- **ESLint**: The core ESLint library, which provides the linting functionality.
+- **TypeScript ESLint**: With `@typescript-eslint/eslint-plugin` and `@typescript-eslint/parser`, ESLint can lint TypeScript files in addition to JavaScript files.
+- **React ESLint**: `eslint-config-react` and `eslint-config-react-app` provide a set of ESLint rules tailored for React applications, and `eslint-plugin-react` provides React-specific linting rules.
+- **Chokidar**: A file watcher used by `eslint-watcher` to monitor changes in your files in real-time.
+
+These dependencies ensure that `eslint-watcher` can lint a wide range of JavaScript and TypeScript code, including React applications. If your project uses other libraries or frameworks, you may need to install additional ESLint plugins or configurations to ensure complete coverage.
 
 ## Custom Configuration
 

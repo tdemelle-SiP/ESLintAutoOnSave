@@ -135,12 +135,12 @@ function setup() {
   createOrUpdateESLintConfig();
   createVSCodeTasks();
   console.log(`
-  +---------------------------------------------------------------+
-  |                                                               |
-  |   Setup complete. Please restart your IDE and the watcher     |
-  |   should start automagically.                                 |
-  |                                                               |
-  +---------------------------------------------------------------+
+  +--------------------------------------------------------+
+  |                                                        |
+  |   Setup complete. Please restart Virtual Studio Code   |
+  |       and the watcher should start automagically.      |
+  |                                                        |
+  +--------------------------------------------------------+
   `);}
 
 setup();
