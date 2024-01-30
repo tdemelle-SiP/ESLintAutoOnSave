@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+// const { execSync } = require('child_process');
 const baseDir = process.cwd(); // Path to the user's project directory
 
 // Function to create or update .eslintrc.js
@@ -97,35 +97,35 @@ function createVSCodeTasks() {
 }
 
 // Function to check if ESLint is locally installed in the project
-function isESLintLocallyInstalled() {
-  console.log('Checking if ESLint is locally installed...');
-  const localESLintPath = path.join(baseDir, 'node_modules', 'eslint');
-  if (fs.existsSync(localESLintPath)) {
-    console.log('ESLint is already installed locally.');
-    return true;
-  } else {
-    console.log('ESLint is not installed locally. Installing now...');
-    return false;
-  }
-}
+// function isESLintLocallyInstalled() {
+//   console.log('Checking if ESLint is locally installed...');
+//   const localESLintPath = path.join(baseDir, 'node_modules', 'eslint');
+//   if (fs.existsSync(localESLintPath)) {
+//     console.log('ESLint is already installed locally.');
+//     return true;
+//   } else {
+//     console.log('ESLint is not installed locally. Installing now...');
+//     return false;
+//   }
+// }
 
 // Function to install ESLint
-function installESLint() {
-  try {
-    console.log('Installing ESLint...');
-    execSync('npm install eslint', { stdio: 'inherit' });
-    console.log('ESLint installation complete.');
-  } catch (error) {
-    console.error('Error installing ESLint:', error);
-  }
-}
+// function installESLint() {
+//   try {
+//     console.log('Installing ESLint...');
+//     execSync('npm install eslint', { stdio: 'inherit' });
+//     console.log('ESLint installation complete.');
+//   } catch (error) {
+//     console.error('Error installing ESLint:', error);
+//   }
+// }
 
 // Main function to run all setup steps
 function setup() {
   console.log('Starting setup...');
-  if (!isESLintLocallyInstalled()) {
-    installESLint();
-  }
+  // if (!isESLintLocallyInstalled()) {
+  //   installESLint();
+  // }
   createOrUpdateESLintConfig();
   createVSCodeTasks();
   console.log('Setup complete. Please restart your IDE.');

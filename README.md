@@ -19,12 +19,12 @@
     npm install eslint-watcher
     ```
 
-2. After the installation, run the setup script manually to configure `eslint-watcher` in your project:
+2. After installing the package with `npm install eslint-watcher`, run the setup script with the following command:
 
     ```sh
-    npm run setup
+    node node_modules/eslint-watcher/scripts/setup.js
     ```
-
+    
 This script will install ESLint (if not already installed), set up a default ESLint configuration, and create necessary Visual Studio Code tasks.
 
 ## Usage
