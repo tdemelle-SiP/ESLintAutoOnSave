@@ -80,11 +80,19 @@ function createVSCodeTasks() {
             location: 2,
             message: 3
           },
+          background: {
+            activeOnStart: true,
+            beginsPattern: '.*',
+            endsPattern: '.*'
+          }
         },
         presentation: {
           reveal: 'always',
           panel: 'new',
           group: 'eslint-watcher'
+        },
+        runOptions: {
+          runOn: 'folderOpen'
         }
       }
     ]
@@ -126,8 +134,14 @@ function setup() {
   }
   createOrUpdateESLintConfig();
   createVSCodeTasks();
-  console.log('Setup complete. Please restart your IDE and the watcher should start automagically.');
-}
+  console.log(`
+  +---------------------------------------------------------------+
+  |                                                               |
+  |   Setup complete. Please restart your IDE and the watcher     |
+  |   should start automagically.                                 |
+  |                                                               |
+  +---------------------------------------------------------------+
+  `);}
 
 setup();
 
