@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
-// const { execSync } = require('child_process');
+const { execSync } = require('child_process');
 const baseDir = process.cwd(); // Path to the user's project directory
 
 // Function to create or update .eslintrc.js
@@ -13,33 +13,33 @@ function createOrUpdateESLintConfig() {
   const eslintConfigPath = path.join(baseDir, '.eslintrc.js');
 
   const eslintConfigContent = `
-module.exports = {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "parserOptions": {
-    "ecmaVersion": 2021,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
+  module.exports = {
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      // Add your custom rules here
     }
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
-  "rules": {
-    // Add your custom rules here
-  }
-};
+  };
 `;
 
   try {
@@ -97,56 +97,40 @@ function createVSCodeTasks() {
 }
 
 // Function to check if ESLint is locally installed in the project
-// function isESLintLocallyInstalled() {
-//   console.log('Checking if ESLint is locally installed...');
-//   const localESLintPath = path.join(baseDir, 'node_modules', 'eslint');
-//   if (fs.existsSync(localESLintPath)) {
-//     console.log('ESLint is already installed locally.');
-//     return true;
-//   } else {
-//     console.log('ESLint is not installed locally. Installing now...');
-//     return false;
-//   }
-// }
+function isESLintLocallyInstalled() {
+  console.log('Checking if ESLint is locally installed...');
+  const localESLintPath = path.join(baseDir, 'node_modules', 'eslint');
+  if (fs.existsSync(localESLintPath)) {
+    console.log('ESLint is already installed locally.');
+    return true;
+  } else {
+    console.log('ESLint is not installed locally. Installing now...');
+    return false;
+  }
+}
 
 // Function to install ESLint
-// function installESLint() {
-//   try {
-//     console.log('Installing ESLint...');
-//     execSync('npm install eslint', { stdio: 'inherit' });
-//     console.log('ESLint installation complete.');
-//   } catch (error) {
-//     console.error('Error installing ESLint:', error);
-//   }
-// }
+function installESLint() {
+  try {
+    console.log('Installing ESLint...');
+    execSync('npm install eslint', { stdio: 'inherit' });
+    console.log('ESLint installation complete.');
+  } catch (error) {
+    console.error('Error installing ESLint:', error);
+  }
+}
 
 // Main function to run all setup steps
 function setup() {
   console.log('Starting setup...');
-  // if (!isESLintLocallyInstalled()) {
-  //   installESLint();
-  // }
+  if (!isESLintLocallyInstalled()) {
+    installESLint();
+  }
   createOrUpdateESLintConfig();
   createVSCodeTasks();
-  console.log('Setup complete. Please restart your IDE.');
-  console.log('Next steps:');
-  console.log('1. Restart your Visual Studio Code.');
-  console.log('2. Open the Command Palette (Ctrl+Shift+P) and run "Tasks: Run Task".');
-  console.log('3. Select "Start ESLint Watcher" to begin linting.');
+  console.log('Setup complete. Please run setup.js and restart your IDE.');
 }
 
-try {
-  console.log('Setup script has started.');
+setup();
 
-  // Replace console.log with a function that writes to a file
-  console.log = function(msg) {
-    fs.appendFileSync(path.join(baseDir, 'setup.log'), msg + '\n');
-  };
-
-  setup();
-
-  console.log('Setup script has finished.');
-  
-} catch (error) {
-  console.error('An error occurred:', error);
-}
+console.log('Setup script has finished.');
