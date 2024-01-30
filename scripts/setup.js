@@ -70,7 +70,7 @@ function createVSCodeTasks() {
       {
         label: 'Start ESLint Watcher',
         type: 'shell',
-        command: './node_modules/.bin/eslint-watcher',
+        command: './node_modules/eslint-watcher/scripts/eslint-watcher.js',
         isBackground: true,
         problemMatcher: {
           owner: 'custom',
