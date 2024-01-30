@@ -8,8 +8,12 @@ const path = require('path');
 const { execSync } = require('child_process');
 const baseDir = process.cwd(); // Path to the user's project directory
 
+console.log('Current working directory:', baseDir);
+
 // Function to create or update .eslintrc.js
 function createOrUpdateESLintConfig() {
+  console.log('Creating or updating .eslintrc.js...');
+
   const eslintConfigPath = path.join(baseDir, '.eslintrc.js');
 
   const eslintConfigContent = `
@@ -48,10 +52,12 @@ module.exports = {
   } catch (error) {
     console.error('Error creating or updating .eslintrc.js:', error);
   }
+  console.log('.eslintrc.js has been created or updated.');
 }
 
 // Function to create .vscode/tasks.json if it doesn't exist
 function createVSCodeTasks() {
+  console.log('Creating .vscode/tasks.json...');
   const vscodeDirectoryPath = path.join(baseDir, '.vscode');
   const tasksFilePath = path.join(vscodeDirectoryPath, 'tasks.json');
 
@@ -96,6 +102,7 @@ function createVSCodeTasks() {
 
 // Function to check if ESLint is locally installed in the project
 function isESLintLocallyInstalled() {
+  console.log('Checking if ESLint is locally installed...');
   const localESLintPath = path.join(baseDir, 'node_modules', 'eslint');
   if (fs.existsSync(localESLintPath)) {
     console.log('ESLint is already installed locally.');
@@ -119,6 +126,7 @@ function installESLint() {
 
 // Main function to run all setup steps
 function setup() {
+  console.log('Starting setup...');
   if (!isESLintLocallyInstalled()) {
     installESLint();
   }
