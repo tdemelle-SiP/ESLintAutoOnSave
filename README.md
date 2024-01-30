@@ -19,7 +19,7 @@
     npm install eslint-watcher
     ```
 
-2. Run the setup script to configure `eslint-watcher` in your project:
+2. After the installation, run the setup script manually to configure `eslint-watcher` in your project:
 
     ```sh
     npm run setup
@@ -34,6 +34,10 @@ After installation and setup, `eslint-watcher` will automatically start whenever
 ## Custom Configuration
 
 You can customize the ESLint rules by editing the `.eslintrc.js` file in your project root. Modify this file to tailor the linting rules to your project's specific needs.
+
+## Troubleshooting
+
+If you encounter any issues during the setup process, please ensure that you have the latest version of Node.js and npm installed. If the problem persists, try running the setup script again or check the console for any error messages. For further assistance, please visit the [GitHub repository](https://github.com/tdemelle-SiP/eslint-watcher) and submit an issue.
 
 ## Contributing
 
