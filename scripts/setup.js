@@ -6,6 +6,8 @@ const path = require('path');
 const { execSync } = require('child_process');
 const baseDir = process.cwd(); // Path to the user's project directory
 
+
+
 // Function to create or update .eslintrc.js
 function createOrUpdateESLintConfig() {
   console.log('Creating or updating .eslintrc.js...');
@@ -68,7 +70,7 @@ function createVSCodeTasks() {
       {
         label: 'Start ESLint Watcher',
         type: 'shell',
-        command: 'eslint-watcher',
+        command: './node_modules/.bin/eslint-watcher',
         isBackground: true,
         problemMatcher: {
           owner: 'custom',
@@ -128,7 +130,7 @@ function setup() {
   }
   createOrUpdateESLintConfig();
   createVSCodeTasks();
-  console.log('Setup complete. Please run setup.js and restart your IDE.');
+  console.log('Setup complete. Please restart your IDE and the watcher should start automagically.');
 }
 
 setup();
