@@ -8,11 +8,18 @@ const baseDir = process.cwd(); // Path to the user's project directory
 
 
 
-// Function to create or update .eslintrc.js
+// Function to create or update .eslintrc.cjs
 function createOrUpdateESLintConfig() {
-  console.log('Creating or updating .eslintrc.js...');
+  console.log('Creating or updating .eslintrc.cjs...');
 
-  const eslintConfigPath = path.join(baseDir, '.eslintrc.js');
+  const oldConfigPath = path.join(baseDir, '.eslintrc.js');
+  const newConfigPath = path.join(baseDir, '.eslintrc.cjs');
+
+  // If an old .eslintrc.js file exists, rename it to .eslintrc.cjs
+  if (fs.existsSync(oldConfigPath)) {
+    fs.renameSync(oldConfigPath, newConfigPath);
+    console.log('Renamed .eslintrc.js to .eslintrc.cjs.');
+  }
 
   const eslintConfigContent = `
   module.exports = {
@@ -46,11 +53,11 @@ function createOrUpdateESLintConfig() {
 
   try {
     fs.writeFileSync(eslintConfigPath, eslintConfigContent);
-    console.log('.eslintrc.js has been created or updated.');
+    console.log('.eslintrc.cjs has been created or updated.');
   } catch (error) {
-    console.error('Error creating or updating .eslintrc.js:', error);
+    console.error('Error creating or updating .eslintrc.cjs:', error);
   }
-  console.log('.eslintrc.js has been created or updated.');
+  console.log('.eslintrc.cjs has been created or updated.');
 }
 
 // Function to create .vscode/tasks.json if it doesn't exist

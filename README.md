@@ -11,7 +11,7 @@
 - **VS Code Integration**: Seamlessly integrates with Visual Studio Code, enhancing your coding experience without disrupting your workflow.
 - **Easy Setup**: A simple setup script configures `eslint-watcher` in your project with minimal effort.
 - **Customizable Monitoring**: Configure which files or directories to monitor according to your project's needs.
-- **Customizable Rules**: Tailor the linting rules to your project's specific needs by editing the `.eslintrc.js` file in your project root.
+- **Customizable Rules**: Tailor the linting rules to your project's specific needs by editing the `.eslintrc.cjs` file in your project root.
 
 ## Installation
 
@@ -46,7 +46,7 @@ These dependencies ensure that `eslint-watcher` can lint a wide range of JavaScr
 
 ## Custom Configuration
 
-You can customize the ESLint rules by editing the `.eslintrc.js` file in your project root. Modify this file to tailor the linting rules to your project's specific needs.
+You can customize the ESLint rules by editing the `.eslintrc.cjs` file in your project root. Modify this file to tailor the linting rules to your project's specific needs.
 
 ## Troubleshooting
 
