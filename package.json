@@ -1,11 +1,10 @@
 {
   "name": "eslint-watcher",
-  "version": "1.2.2-beta.2",
+  "version": "1.2.2-beta.3",
   "description": "Watches selected files in your repo for new saves and runs ESLint in its own terminal when it sees a save.",
   "main": "scripts/eslint-watcher.js",
   "scripts": {
-    "preinstall": "echo 'preinstall script is running'",
-    "postinstall": "node scripts/setup.js",
+    "postinstall": "node -e \"require('child_process').execSync('node scripts/setup.js', { stdio: 'inherit' })\"",
     "setup": "node scripts/setup.js",
     "eslint-watcher": "node scripts/eslint-watcher.js"
   },
