@@ -1,18 +1,10 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-console.log('Setup script has started.');
-
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 const baseDir = process.cwd(); // Path to the user's project directory
-
-// Replace console.log with a function that writes to a file
-console.log = function(msg) {
-  fs.appendFileSync('setup.log', msg + '\n');
-};
-
 
 // Function to create or update .eslintrc.js
 function createOrUpdateESLintConfig() {
@@ -143,6 +135,18 @@ function setup() {
   console.log('3. Select "Start ESLint Watcher" to begin linting.');
 }
 
-setup();
+try {
+  console.log('Setup script has started.');
 
-console.log('Setup script has finished.');
+  // Replace console.log with a function that writes to a file
+  console.log = function(msg) {
+    fs.appendFileSync(path.join(baseDir, 'setup.log'), msg + '\n');
+  };
+
+  setup();
+
+  console.log('Setup script has finished.');
+  
+} catch (error) {
+  console.error('An error occurred:', error);
+}
