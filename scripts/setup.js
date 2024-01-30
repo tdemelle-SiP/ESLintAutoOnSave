@@ -8,7 +8,11 @@ const path = require('path');
 const { execSync } = require('child_process');
 const baseDir = process.cwd(); // Path to the user's project directory
 
-console.log('Current working directory:', baseDir);
+// Replace console.log with a function that writes to a file
+console.log = function(msg) {
+  fs.appendFileSync('setup.log', msg + '\n');
+};
+
 
 // Function to create or update .eslintrc.js
 function createOrUpdateESLintConfig() {
