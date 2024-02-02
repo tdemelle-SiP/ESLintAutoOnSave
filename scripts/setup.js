@@ -52,7 +52,7 @@ function createOrUpdateESLintConfig() {
 `;
 
   try {
-    fs.writeFileSync(eslintConfigPath, eslintConfigContent);
+    fs.writeFileSync(newConfigPath, eslintConfigContent);
     console.log('.eslintrc.cjs has been created or updated.');
   } catch (error) {
     console.error('Error creating or updating .eslintrc.cjs:', error);
